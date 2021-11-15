@@ -1,7 +1,7 @@
 <div>
   <h3>parent: {{ count }}</h3>
-  <button>change child value</button>
-  <button>get child value</button>
+  <button (click)="changeChildValue()">change child value</button>
+  <button (click)="getChildValue()">get child value</button>
 
   <app-child
     [count]="count"

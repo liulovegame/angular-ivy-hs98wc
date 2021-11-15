@@ -9,6 +9,7 @@ export class ChildComponent implements OnInit {
   constructor() {}
 
   input = '';
+  childValue = 'child value';
 
   @Input() count: number;
   @Output() handleAdd = new EventEmitter();
@@ -20,6 +21,10 @@ export class ChildComponent implements OnInit {
 
   handleUpdateClick() {
     this.handleUpdate.emit(parseInt(this.input));
+  }
+
+  changeChildValue(newVal: string) {
+    this.childValue = newVal;
   }
 
   ngOnInit() {}

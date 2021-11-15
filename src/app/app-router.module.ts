@@ -3,6 +3,7 @@ import { RouterModule, Route } from '@angular/router';
 import { HelloComponent } from './hello.component';
 import { BasisComponent } from './pages/basis/basis.component';
 import { ParentComponent } from './pages/parent/parent.component';
+import { ParentModule } from './pages/parent/parent.module';
 
 type IRoutes = Route & {
   title: string;
@@ -28,7 +29,7 @@ export const routes: IRoutes[] = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), ParentModule],
   exports: [RouterModule],
 })
 export class AppRouterModule {}
