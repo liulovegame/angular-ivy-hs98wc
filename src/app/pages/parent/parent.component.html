@@ -14,5 +14,8 @@
     <div>default value</div>
     <div question>question value</div>
   </app-child-tmp>
-  <ng-template #childTmpVal><i class="fa fa-arrows-h">1111</i></ng-template>
+  <ng-template #childTmpVal>
+    <i class="fa fa-arrows-h">1111</i>
+    <button (click)="handleAdd()">handle add</button>
+  </ng-template>
 </div>
