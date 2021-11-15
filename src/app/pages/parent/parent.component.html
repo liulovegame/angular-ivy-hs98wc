@@ -1,0 +1,11 @@
+<div>
+  <h3>parent</h3>
+  <button>change child value</button>
+  <button>get child value</button>
+
+  <app-child
+    [count]="count"
+    (handleAdd)="(handleAdd)"
+    (handleUpdate)="(handleUpdate)"
+  ></app-child>
+</div>

@@ -1,21 +1,29 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Route } from '@angular/router';
+import { HelloComponent } from './hello.component';
 import { BasisComponent } from './pages/basis/basis.component';
+import { ParentModule } from './pages/parent/parent.module';
 
-const router: Routes = [
+type IRoutes = Route & {
+  title: string;
+};
+
+export const routes: IRoutes[] = [
   {
-    path: '/basis',
-    component: BasisComponent,
+    title: '首页',
+    path: '',
+    component: HelloComponent,
+    pathMatch: 'full',
   },
   {
-    path: '',
+    title: '基础组件',
+    path: 'basis',
     component: BasisComponent,
-    pathMatch: 'full',
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(router)],
+  imports: [RouterModule.forRoot(routes), ParentModule],
   exports: [RouterModule],
 })
 export class AppRouterModule {}

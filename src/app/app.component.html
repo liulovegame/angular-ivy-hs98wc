@@ -1,10 +1,12 @@
-<hello name="{{ name }}"></hello>
 <p>Start editing to see some magic happen :)</p>
 
 <nav>
-  <a routerLink="/basis" routerLinkActive="active">Crisis Center</a>
-  <a routerLink="/superheroes" routerLinkActive="active">Heroes</a>
-  <a routerLink="/admin" routerLinkActive="active">Admin</a>
-  <a routerLink="/login" routerLinkActive="active">Login</a>
+  <a
+    *ngFor="let route of routes; index as i"
+    [routerLink]="route.path"
+    routerLinkActive="active"
+  >
+    {{ route.title }}
+  </a>
 </nav>
 <router-outlet></router-outlet>
