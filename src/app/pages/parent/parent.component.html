@@ -5,7 +5,7 @@
 
   <app-child
     [count]="count"
-    (handleAdd)="(handleAdd)"
-    (handleUpdate)="(handleUpdate)"
+    (handleAdd)="handleAdd()"
+    (handleUpdate)="handleUpdate($event)"
   ></app-child>
 </div>
