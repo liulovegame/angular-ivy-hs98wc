@@ -26,8 +26,8 @@ export class ParentComponent implements OnInit {
     alert(this.childComponent.childValue);
   }
 
-  changeChildValue() {
-    this.childComponent.changeChildValue('new child value');
+  changeChildValue(str: string) {
+    this.childComponent.changeChildValue('new child value: ' + str);
   }
 
   ngOnInit() {}

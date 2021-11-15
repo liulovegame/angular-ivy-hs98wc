@@ -1,3 +1,13 @@
-<p>
-child-tmp works!
-</p>
+<div>
+  <h3>Child params component</h3>
+  Default:
+  <ng-content></ng-content>
+  Question:
+  <ng-content select="[question]"></ng-content>
+  span:
+  <ng-content select="span"></ng-content>
+  childTmp:
+  <div>
+    {{ childTmp }}
+  </div>
+</div>

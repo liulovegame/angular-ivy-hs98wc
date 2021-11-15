@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'app-child-tmp',
   templateUrl: './child-tmp.component.html',
-  styleUrls: ['./child-tmp.component.css']
+  styleUrls: ['./child-tmp.component.css'],
 })
 export class ChildTmpComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  @Input() childTmp: TemplateRef<HTMLElement>;
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

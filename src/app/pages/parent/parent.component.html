@@ -1,6 +1,6 @@
 <div>
-  <h3>parent: {{ count }}</h3>
-  <button (click)="changeChildValue()">change child value</button>
+  <h3 #test>parent: {{ count }}</h3>
+  <button (click)="changeChildValue(test.innerHTML)">change child value</button>
   <button (click)="getChildValue()">get child value</button>
 
   <app-child
@@ -8,4 +8,11 @@
     (handleAdd)="handleAdd()"
     (handleUpdate)="handleUpdate($event)"
   ></app-child>
+
+  <app-child-tmp [childTmp]="childTmpVal">
+    <span>span value</span>
+    <div>default value</div>
+    <div question>question value</div>
+  </app-child-tmp>
+  <ng-template #childTmpVal><i class="fa fa-arrows-h">1111</i></ng-template>
 </div>
