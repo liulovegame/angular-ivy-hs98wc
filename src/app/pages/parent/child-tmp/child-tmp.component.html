@@ -7,7 +7,5 @@
   span:
   <ng-content select="span"></ng-content>
   childTmp:
-  <div>
-    {{ childTmp }}
-  </div>
+  <ng-template [NgTemplateOutlet]="childTmp"></ng-template>
 </div>
