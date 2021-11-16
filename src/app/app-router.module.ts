@@ -50,12 +50,12 @@ export const routes: IRoutes[] = [
     component: UrlParamsComponent,
     children: [
       {
-        path: ':id',
-        component: UrlIdComponent,
-      },
-      {
         path: 'test',
         component: UrlSearchComponent,
+      },
+      {
+        path: ':id',
+        component: UrlIdComponent,
       },
       {
         path: '**',
