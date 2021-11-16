@@ -7,6 +7,10 @@ import { DynamicComponent } from './pages/dynamic/dynamic.component';
 import { DynamicModule } from './pages/dynamic/dynamic.module';
 import { ParentComponent } from './pages/parent/parent.component';
 import { ParentModule } from './pages/parent/parent.module';
+import { UrlDefaultComponent } from './pages/url-params/url-default/url-default.component';
+import { UrlIdComponent } from './pages/url-params/url-id/url-id.component';
+import { UrlParamsComponent } from './pages/url-params/url-params.component';
+import { UrlSearchComponent } from './pages/url-params/url-search/url-search.component';
 
 type IRoutes = Route & {
   title: string;
@@ -38,6 +42,25 @@ export const routes: IRoutes[] = [
     path: 'datalist',
     title: '数据请求',
     component: DataListComponent,
+  },
+  {
+    path: 'params',
+    title: '路由嵌套和带参',
+    component: UrlParamsComponent,
+    children: [
+      {
+        path: ':id',
+        component: UrlIdComponent,
+      },
+      {
+        path: 'test',
+        component: UrlSearchComponent,
+      },
+      {
+        path: '**',
+        component: UrlDefaultComponent,
+      },
+    ],
   },
 ];
 
