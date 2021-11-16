@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-data-list',
@@ -19,6 +19,23 @@ export class DataListComponent implements OnInit {
       .subscribe((res) => {
         console.log(res);
         this.dataList = JSON.stringify(res);
+      });
+  }
+
+  handlePost() {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    };
+    this.http
+      .post(
+        'https://jsonplaceholder.typicode.com/posts',
+        {
+          id: 1,
+        },
+        httpOptions
+      )
+      .subscribe((res) => {
+        console.log(res);
       });
   }
 

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Route } from '@angular/router';
 import { HelloComponent } from './hello.component';
 import { BasisComponent } from './pages/basis/basis.component';
+import { DataListComponent } from './pages/data-list/data-list.component';
 import { DynamicComponent } from './pages/dynamic/dynamic.component';
 import { DynamicModule } from './pages/dynamic/dynamic.module';
 import { ParentComponent } from './pages/parent/parent.component';
@@ -32,6 +33,11 @@ export const routes: IRoutes[] = [
     path: 'dynamic',
     title: '动态组件',
     component: DynamicComponent,
+  },
+  {
+    path: 'datalist',
+    title: '数据请求',
+    component: DataListComponent,
   },
 ];
 
