@@ -10,6 +10,7 @@ import { ParentModule } from './pages/parent/parent.module';
 import { UrlDefaultComponent } from './pages/url-params/url-default/url-default.component';
 import { UrlIdComponent } from './pages/url-params/url-id/url-id.component';
 import { UrlParamsComponent } from './pages/url-params/url-params.component';
+import { UrlParamsModule } from './pages/url-params/url-params.module';
 import { UrlSearchComponent } from './pages/url-params/url-search/url-search.component';
 
 type IRoutes = Route & {
@@ -65,7 +66,12 @@ export const routes: IRoutes[] = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), ParentModule, DynamicModule],
+  imports: [
+    RouterModule.forRoot(routes),
+    ParentModule,
+    DynamicModule,
+    UrlParamsModule,
+  ],
   exports: [RouterModule],
 })
 export class AppRouterModule {}
