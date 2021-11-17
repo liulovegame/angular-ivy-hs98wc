@@ -20,9 +20,8 @@ type IRoutes = Route & {
 export const routes: IRoutes[] = [
   {
     title: '首页',
-    path: '',
+    path: 'home',
     component: HelloComponent,
-    pathMatch: 'full',
   },
   {
     title: '基础组件',
@@ -68,6 +67,11 @@ export const routes: IRoutes[] = [
     title: '权限控制',
     loadChildren: () =>
       import('./pages/admin/admin.module').then((m) => m.AdminModule),
+  },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: '/home',
   },
 ];
 
