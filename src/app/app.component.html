@@ -5,9 +5,10 @@
     *ngFor="let route of routes; index as i"
     [routerLink]="route.path"
     routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: route.exact }"
   >
     {{ route.title }}
   </a>
-  <a routerLink="/login">login</a>
+  <a routerLink="/login" routerLinkActive="active">login</a>
 </nav>
 <router-outlet></router-outlet>

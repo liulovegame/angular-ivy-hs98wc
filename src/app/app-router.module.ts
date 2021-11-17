@@ -15,13 +15,15 @@ import { UrlSearchComponent } from './pages/url-params/url-search/url-search.com
 
 type IRoutes = Route & {
   title: string;
+  exact?: boolean;
 };
 
 export const routes: IRoutes[] = [
   {
     title: '首页',
-    path: 'home',
+    path: '',
     component: HelloComponent,
+    exact: true,
   },
   {
     title: '基础组件',
@@ -67,11 +69,6 @@ export const routes: IRoutes[] = [
     title: '权限控制',
     loadChildren: () =>
       import('./pages/admin/admin.module').then((m) => m.AdminModule),
-  },
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: '/home',
   },
 ];
 
