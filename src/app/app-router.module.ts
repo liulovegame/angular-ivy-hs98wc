@@ -63,6 +63,12 @@ export const routes: IRoutes[] = [
       },
     ],
   },
+  {
+    path: 'admin',
+    title: '权限控制',
+    loadChildren: () =>
+      import('./pages/admin/admin.module').then((m) => m.AdminModule),
+  },
 ];
 
 @NgModule({
