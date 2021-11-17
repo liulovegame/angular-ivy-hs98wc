@@ -11,15 +11,15 @@ const routes: Routes = [
     path: '',
     component: AdminComponent,
     children: [
-      { path: '/heros', component: HeroesComponent },
-      { path: '/crises', component: CrisesComponent },
+      { path: 'heroes', component: HeroesComponent },
+      { path: 'crises', component: CrisesComponent },
       { path: '', component: DashboardComponent },
     ],
   },
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forRoot(routes)],
+  imports: [CommonModule, RouterModule.forChild(routes)],
   declarations: [
     AdminComponent,
     HeroesComponent,
