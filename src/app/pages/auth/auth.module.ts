@@ -14,6 +14,6 @@ const routes: Routes = [
 @NgModule({
   imports: [CommonModule, FormsModule, RouterModule.forChild(routes)],
   declarations: [LoginComponent],
-  exports: [],
+  exports: [RouterModule],
 })
 export class AuthModule {}
